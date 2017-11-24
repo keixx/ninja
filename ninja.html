@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+    <head> 
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>Ninja Gold</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  
+    <link rel="shortcut icon" href="images/pokeninja.gif"> 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="Bootstrap 3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="Bootstrap 3.3.7/JQuery 3.1.1/jquery.min.js"></script>
+    <script src="Bootstrap 3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function(){
+            setTimeout(function() {
+                $('#loading').fadeOut( 400, "linear" );
+            }, 300);
+        });
+    </script>  
+    </head>
+<body>
+        <div class="row">
+            <div class="col-xs-12">
+               <div class="col-xs-12">
+                    <div class="col-xs-9"><img src="images/gold.png" width="650" height="80" style="margin-top: 5px; margin-left: 120px" ></div>
+                        <center>
+                    <div class="col-sm-3">
+                        <a href="index.html" class="btn_home"><img src="images/home_btn.png" title="home" width="70px" height="70px" /></a>
+                        <div class="col-xs-1"></div>
+                        <a href=# onClick=move_img('reset') class="btn_home"><img src="images/reset_btn.png" title="reset" width="70px" height="70px" /></a></center></div>
+                    <div class="col-sm-1"></div>
+                    <div class = "col-xs-7">
+                        <div id="ninja">
+                        <img src = "images/ninja.gif" class = "ninja"></div>
+                            <br><br><br>
+                            <div class = "col-xs-10" >
+                                <img src = "images/cave.png" class = "img" title="cave">
+                                <img src = "images/home.png" class = "img img-leftpadding" title="house">        
+
+                            </div>
+                            <div class = "col-xs-10" >
+                                <img src = "images/mine.png" class = "img" title="mine">
+                                <img src = "images/casino.png" class = "img img-leftpadding" title="casino">
+                            </div>
+                    </div>
+
+                <div class="col-xs-4">
+                    <div class = "col-xs-12"">
+                        <br>
+                        <div class = "col-xs-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="background-color: #4f6d80; color: white; width: 135px;">
+                                    <strong>Attempts:</strong></span><input  id = "attempts" class="form-control col-sm-3 textbox-margin" value = 20 readonly style="width: 75px;">
+                            </div>
+                        </div>
+                        </div>
+                        <div class = "col-xs-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="background-color: #4f6d80; color: white; width: 140px;">
+                                    <strong>Gold:</strong> </span><input id = "earned"  class="form-control col-sm-3 textbox-margin" value = 0 readonly style="width: 75px;">
+                            </div>
+                        </div> 
+                        </div>
+                   
+                        <div class="col-sm-6"><div class = "col-xs-11"><button class = "buttons btn btn-warning btn-lg " id="cave"onClick=move_img('cave') ><span>Cave</span></button></div></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-6"><div class = "col-xs-11"><button class = "buttons btn btn-warning btn-lg" id="house"onClick=move_img('house') ><span>House</span></button></div></div>
+                        <div class="col-xs-6"><div class = "col-xs-11"><button class = "buttons btn btn-warning btn-lg" id="mine" onClick=move_img('mine') ><span>Mine</span></button></div></div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-6"><div class = "col-xs-11"><button class = "buttons btn btn-warning btn-lg" id="casino" onClick=move_img('casino')><span>Casino</span></button><br><br></div></div></div>
+
+                    
+
+                <div class="col-xs-12">
+                    <div id = "cont" class="showback" >
+                        <center><h3>Log Of The Event</h3>
+                            <div class="col-xs-2"></div>
+                                <ul class="nav nav-tabs">
+                                    <li class = "active"><a data-toggle="tab" href="#log1">All</a></li>
+                                    <li><a data-toggle="tab" href="#log2">Wins</a></li>
+                                    <li><a data-toggle="tab" href="#log3">Losses</a></li>
+                                </ul>
+                            </center>
+
+                            <div class="tab-content showback">
+                                <div id="log1" class="tab-pane fade in active pan-style log"  >
+
+                                </div>
+                                <div id="log2" class="tab-pane fade pan-style log">
+
+                                </div>
+                                <div id="log3" class="tab-pane fade pan-style log">
+
+                                </div>
+
+                            <div id="myBtn" style="position:absolute;"></div>
+                            </div></div></center></div>
+                            <div class = "col-xs-12"">
+                            <div class = "col-xs-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="background-color: #4f6d80; color: white; width:135px;">
+                                        <strong>Total Gains:</strong></span><input  id = "gained" class="form-control col-sm-3 textbox-margin" value = 0 readonly style="width: 55px;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "col-xs-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="background-color: #4f6d80; color: white; width:135px;">
+                                        <strong>Total losses:</strong></span><input id = "lost"  class="form-control col-sm-3 textbox-margin" value = 0 readonly style="width: 55px;">
+                                </div>
+                            </div>
+                        </div>
+    
+    <div id="myModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; padding-right: 17px; margin-top:0%;" >
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+             <p>Sorry You Lost! Try Again.</p>
+         </div>
+    </div>
+</div>
+
+            <script type="text/javascript" src = "js/jquery.min.js"></script>
+            <script type="text/javascript" src = "js/bootstrap.js"></script>
+
+                <script type="text/javascript">
+
+                    var modal = document.getElementById('myModal');
+
+                    var btn = document.getElementById("myBtn");
+
+                    var span = document.getElementsByClassName("close")[0];
+
+                    btn.onclick = function() {
+                        modal.style.display = "block";
+                    }
+
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                    
+                    var attempts = 20;
+                    var earned = 0;
+                    var percent = 0;
+                    var loses = [0];
+                    var wins  = [0];
+                    var events = [];
+                    var curclick =  -1;
+
+
+                   function move_img(str) {
+
+                        switch(str){
+                        case "cave":                         
+                                document.getElementById('ninja').style.top=150 + "px";
+                                document.getElementById('ninja').style.left=130 + "px";
+                                --attempts; 
+                                $('#attempts').val(attempts);
+
+                                earned+=5;
+                                wins.push(5);
+                                $('#earned').val(earned);
+                                $('#earned').css({ 'background-color': 'green','color':'black'});
+
+                                
+                                events.push({location:'Cave',time: new Date().toLocaleString(), amount:5});
+                                //alert(events[0]['time']);
+                                curclick += 1;
+                                output();
+                                if(attempts==0){
+                                    gameEnd();
+                                }
+                                check();
+                                var totalwin = wins.reduce(getSum);
+                                $('#gained').val(totalwin);
+                        break;
+
+                        case "house":
+                            document.getElementById('ninja').style.top=150 + "px";
+                            document.getElementById('ninja').style.left=420 + "px";
+                            --attempts; 
+                            $('#attempts').val(attempts);
+                            percent = Math.floor((Math.random() * 10) + 1);
+                            ++curclick;
+                            if(percent>2){
+                                earned+=10
+                                wins.push(10);
+                                $('#earned').val(earned);
+                                $('#earned').css({ 'background-color': 'green','color':'black'});
+                                events.push({location:'House',time: new Date().toLocaleString(), amount:10});
+                                var totalwin = wins.reduce(getSum);
+                                $('#gained').val(totalwin);
+
+
+                            }
+                            else{
+                                $('#earned').css({ 'background-color': 'black','color':'white'});
+                                events.push({location:'House',time: new Date().toLocaleString(), amount:0});
+                                
+                            }
+                            output();
+                            if(attempts==0){
+                                gameEnd();
+                            }
+                            check();
+                        break;
+
+                        case "mine":
+                            document.getElementById('ninja').style.left=130 + "px";
+                            document.getElementById('ninja').style.top=360 + "px";
+                            --attempts; 
+                                $('#attempts').val(attempts);
+                                percent = Math.floor((Math.random() * 10) + 1);
+                                var gold = Math.floor((Math.random() * 25));
+                                ++curclick;
+                                if(percent>2){
+                                    earned+=gold
+                                    wins.push(gold);
+                                    $('#earned').val(earned);
+                                    $('#earned').css({ 'background-color': 'green','color':'black'});
+                                    events.push({location:'Gold Mine',time: new Date().toLocaleString(), amount:gold});
+                                    var totalwin = wins.reduce(getSum);
+                                    $('#gained').val(totalwin);
+                                }
+                                else{
+                                    
+                                    $('#earned').css({ 'background-color': 'black','color':'white'});
+                                    events.push({location:'Gold Mine',time: new Date().toLocaleString(), amount:0});
+
+                                }
+                                output();
+                                if(attempts==0){
+                                    gameEnd();
+                                    disable();
+                                }
+                                check();
+                        break;
+
+                        case "casino":
+                            document.getElementById('ninja').style.left=420 + "px";
+                            document.getElementById('ninja').style.top=360 + "px";
+                                 --attempts; 
+                            $('#attempts').val(attempts);
+
+                            percent = Math.floor((Math.random() * 10) + 1);
+                            var gold =  Math.floor( Math.random() * ( 1 + 50 - 40 ) ) + 40;
+                            ++curclick;
+                            if(percent>5){
+
+                                earned+=gold;
+                                wins.push(gold);
+                                $('#earned').val(earned);
+                                $('#earned').css({ 'background-color': 'green','color':'black'});
+                                events.push({location:'Casino',time: new Date().toLocaleString(), amount:gold});
+                                var totalwin = wins.reduce(getSum);
+                                $('#gained').val(totalwin);
+                            }
+                            else{
+                                earned-=gold;
+                                loses.push(gold);
+                                $('#earned').val(earned);
+                                $('#earned').css({ 'background-color': 'red','color':'black'});
+                                events.push({location:'Casino',time: new Date().toLocaleString(), amount:-gold});
+                                var totalloss =loses.reduce(getSum);
+                                $('#lost').val(totalloss);
+                            }
+                            output();
+                            if(attempts==0){
+                                gameEnd();
+                            }
+                            check();
+                            break;
+
+                        case "reset":
+                            document.getElementById('ninja').style.left=-70 + "px";
+                            document.getElementById('ninja').style.top=250 + "px";
+                            attempts = 20;
+                            loses = [0];
+                            wins = [0];
+                            events = [];
+                            curclick = -1;
+                            earned = 0;
+                            $('#attempts').val(attempts);
+                            $('#earned').val(earned);
+                            $('#earned').css({ 'background-color': '#EEEEEE','color':'black'});
+                            $("#log1").html("");
+                            $("#log2").html("");
+                            $("#log3").html("");    
+                            $('#cave').attr('disabled',false);
+                            $('#house').attr('disabled',false);
+                            $('#mine').attr('disabled',false);
+                            $('#casino').attr('disabled',false);
+                            $('#gained').val(0);
+                            $('#lost').val(0);
+                        break;
+
+                        }
+                        }
+
+                    function gameEnd(){
+                        var totalwin = wins.reduce(getSum);
+                        var totallose = loses.reduce(getSum);
+
+                        if(earned>=250){
+                            var modal = document.getElementById('myModal');
+
+                            var btn = document.getElementById("myBtn");
+
+                            var span = document.getElementsByClassName("close")[0];
+                             
+                            btn.onclick = function() {
+                                modal.style.display = "block";
+                            }
+
+                            span.onclick = function() {
+                                modal.style.display = "none";
+                            }
+
+                            window.onclick = function(event) {
+                                if (event.target == modal) {
+                                    modal.style.display = "none";
+                                }
+                            }
+
+                        }
+                        else{
+                            alert('Sorry You Lost! Try Again.');
+                        }
+                        disable();
+                    }
+
+                    function disable(){
+                        $('#cave').attr('disabled',true);
+                        $('#house').attr('disabled',true);
+                        $('#mine').attr('disabled',true);
+                        $('#casino').attr('disabled',true);
+                    }
+
+                    function check(){
+                        if(earned>=250 && attempts >0){
+                            var totalwin = wins.reduce(getSum);
+                            var totallose = loses.reduce(getSum);
+                            alert('You Won!');
+                            disable();
+                        }
+                    }
+
+
+                    function output(){
+                        if(events[curclick]['amount']>0){
+                            $("#log1").append("<p class = 'win'> Location :"+events[curclick]['location']+"; Time: "+events[curclick]['time']+"; Amount: "+events[curclick]['amount']+"</p>");  
+                            $("#log2").append("<p class = 'win'> Location :"+events[curclick]['location']+"; Time: "+events[curclick]['time']+"; Amount: "+events[curclick]['amount']+"</p>");  
+                        }
+                        else if(events[curclick]['amount']<0){
+                            $("#log1").append("<p class = 'lose'> Location :"+events[curclick]['location']+"; Time: "+events[curclick]['time']+"; Amount: "+events[curclick]['amount']+"</p>"); 
+                            $("#log3").append("<p class = 'lose'> Location :"+events[curclick]['location']+"; Time: "+events[curclick]['time']+"; Amount: "+events[curclick]['amount']+"</p>"); 
+                        }
+                        else{
+                            $("#log1").append("<p class = 'noamount'> Location :"+events[curclick]['location']+"; Time: "+events[curclick]['time']+"; Amount: "+events[curclick]['amount']+"</p>"); 
+                        }
+
+                    }
+
+                    function getSum(total, num) {
+                        return total + num;
+                    }
+            </script>
+        </div></div></div></body></html>

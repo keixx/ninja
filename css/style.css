@@ -1,0 +1,155 @@
+body {
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 0;
+  margin-top: 0;
+  padding-left: 10px;
+  padding-right: 20px;
+  background-image: url("../images/bg.png");
+  background-repeat:no-repeat;
+  background-attachment:fixed; 
+  background-size: cover;
+}
+
+.row {
+	padding-top: 30px;
+	padding-right: 45px;
+}
+
+.rows {
+	margin-right: 230px;
+	margin-left: 20px;
+}
+
+.ninja {
+	height: 110px;
+	width: 110px; 
+	}
+
+#ninja {
+	margin-left: 0px;
+	z-index:99999;
+  	position:absolute;
+  	top: 250px;
+  	left: -70px;
+  	margin-top: -20px;
+}
+
+.log {
+	padding-left: 10px;
+	font-size: 11px;
+}
+
+#cont{
+	margin-left: 0px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    filter: alpha(opacity=50); 
+	background-color:  rgba(238, 238, 238, 0.88); 
+	border: 5px solid #edbb718f;
+}
+
+.img{
+	float:left;
+	padding-top: 15px;
+	margin: 1px;
+	height: 220px;
+	width: 296px;
+	background-color: rgba(22, 24, 32, 0.48);
+	border: 5px solid #edbb718f;
+	padding-right: 20px;
+	border-radius: 50%;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    filter: alpha(opacity=50); 
+}
+
+.textbox-margin{
+	margin-bottom: 10px;
+	color:black;
+	font-weight: bold;
+}
+
+
+.buttons{
+	height:50px;
+	margin-top:10px;
+	width:150px;
+	color: black;
+
+}
+
+.img-leftpadding{
+	padding-left: 20px;
+}
+
+.img-rightpadding{
+	padding-right:20px;
+
+}
+
+.textarea-dim{
+	margin-left:100px;
+}
+
+.pan-style{
+	 height:150px;
+	 overflow-y: auto;
+}
+
+.log-container{
+	border: 1px solid white;
+	margin-top: 20px; 
+	border-radius: 10px;
+}
+
+.win{
+	line-height: 20px;
+	color:green;
+}
+
+.lose{
+	line-height: 20px;
+	color:red;
+}
+
+.noamount{
+	line-height: 20px;
+	color:black;
+}
+
+.home, h1 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.button_home {
+	width: 150px;
+}
+
+.imgcontainer {
+    text-align: center;
+    position: relative;
+    background: transparent;
+}
+
+.btn_home {
+	background: transparent;
+	border: none;
+	padding-right: 60px;
+
+}
+
+.btn_home:hover {
+	border: none;
+}
